@@ -1,1 +1,6 @@
 env/
+**/__pycache__/**
+ceddiesk/__pycache__/
+ceddiesk_app/__pycache__/
+ceddiesk_app/__pycache__/*
+.vscode/
