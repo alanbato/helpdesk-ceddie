@@ -59,7 +59,7 @@ class Request(models.Model):
         on_delete=models.SET_NULL,
         related_name="requests",
         related_query_name="request",
-        null=True
+        null=True,
     )
     adviser = models.ForeignKey(
         Adviser,
@@ -82,6 +82,12 @@ class Request(models.Model):
     course_id = models.CharField(max_length=10, blank=True, null=True)
     reassigned_ticket = models.CharField(max_length=20, blank=True, null=True)
 
+    def __str__(self):
+        return "{} {}".format("Solicitud", self.id)
+
+    def __repr__(self):
+        return str(self)
+
 
 class Comment(models.Model):
     user = models.ForeignKey(
@@ -89,7 +95,7 @@ class Comment(models.Model):
         on_delete=models.SET_NULL,
         related_name="comments",
         related_query_name="comment",
-        null=True
+        null=True,
     )
     request = models.ForeignKey(
         Request,
@@ -99,3 +105,11 @@ class Comment(models.Model):
     )
     date_created = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
+
+    def __str__(self):
+        return "{} {} {} {}".format(
+            "Comentario", self.id, "de la solicitud", self.solicitud.id
+        )
+
+    def __repr__(self):
+        return str(self)
