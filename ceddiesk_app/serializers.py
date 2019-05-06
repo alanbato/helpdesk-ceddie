@@ -28,12 +28,11 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class AdviserSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
 
     class Meta:
         model = Adviser
         depth = 1
-        fields = ('user', 'name', 'nomina', 'email')
+        fields = ('user_id', 'name', 'nomina', 'email')
 
     def create(self, validated_data):
         user_data = validated_data.pop("user")
@@ -45,12 +44,12 @@ class AdviserSerializer(serializers.ModelSerializer):
 
 
 class TeacherSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    # user = UserSerializer()
     
     class Meta:
         model = Teacher
         depth = 1
-        fields = ('user', 'name', 'nomina', 'email')
+        fields = ('user_id', 'name', 'nomina', 'email')
 
     def create(self, validated_data):
         user_data = validated_data.pop("user")
