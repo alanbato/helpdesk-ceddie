@@ -2,14 +2,19 @@ from rest_framework.views import APIView
 from ceddiesk_app.apiresponse import ApiResponse
 from rest_framework import status
 from django.contrib.auth import authenticate, login
-from ceddiesk_app.models import Teacher
+from ceddiesk_app.models import Teacher, Adviser
+from ceddiesk_app.serializers import TeacherSerializer, AdviserSerializer
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.permissions import AllowAny
 
 
 class LoginView(APIView):
     """
     Handles logging users into the platform
     """
+    permission_classes = (AllowAny,)
 
+    @csrf_exempt
     def post(self, request, format=None):
         """
         Logs a user into the platform given their username and password
@@ -34,7 +39,6 @@ class LoginView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         user = authenticate(request, username=request.data['nomina'], password=request.data['password'])
-        login(request, user)
         if user is None:
             return ApiResponse(
                 success=False,
@@ -42,10 +46,16 @@ class LoginView(APIView):
                 data=None,
                 status=status.HTTP_401_UNAUTHORIZED
             )
-        teacher = Teacher.objects.get(user_id=user.id)
+        login(request, user)
+        try:
+            teacher = Teacher.objects.get(user_id=user.id)
+            response = TeacherSerializer(teacher)
+        except Teacher.DoesNotExist:
+            adviser = Adviser.objects.get(user_id=user.id)
+            response = AdviserSerializer(adviser)
         return ApiResponse(
             success=True,
             message='Logged in',
-            data=teacher,
+            data=response.data,
             status=status.HTTP_200_OK
         )
