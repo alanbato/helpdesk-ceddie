@@ -4,3 +4,4 @@ ceddiesk/__pycache__/
 ceddiesk_app/__pycache__/
 ceddiesk_app/__pycache__/*
 .vscode/
+.pytest_cache/
