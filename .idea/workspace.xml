@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02b86429-958b-4fd4-8d5d-2042f31105a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceddiesk/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceddiesk/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ceddiesk_app/views/login_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceddiesk_app/views/login_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceddiesk_app/views/request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceddiesk_app/views/request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceddiesk_app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceddiesk_app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/request_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -78,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/login_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            <state relative-caret-position="344">
+              <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -136,9 +131,9 @@
         <option value="$PROJECT_DIR$/ceddiesk_app/urls.py" />
         <option value="$PROJECT_DIR$/ceddiesk_app/serializers.py" />
         <option value="$PROJECT_DIR$/ceddiesk/settings.py" />
-        <option value="$PROJECT_DIR$/ceddiesk_app/views/login_view.py" />
         <option value="$PROJECT_DIR$/ceddiesk_app/views/user_view.py" />
         <option value="$PROJECT_DIR$/ceddiesk_app/views/request_view.py" />
+        <option value="$PROJECT_DIR$/ceddiesk_app/views/login_view.py" />
       </list>
     </option>
   </component>
@@ -246,12 +241,12 @@
       <updated>1557092132323</updated>
       <workItem from="1557092134084" duration="13306000" />
       <workItem from="1557157565653" duration="8000" />
-      <workItem from="1557165685962" duration="1240000" />
+      <workItem from="1557165685962" duration="1324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14554000" />
+    <option name="totallyTimeSpent" value="14638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -378,16 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/login_view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/user_view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -400,8 +385,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/request_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ceddiesk_app/views/login_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

@@ -55,10 +55,12 @@ class LoginView(APIView):
             adviser = Adviser.objects.get(user_id=user.id)
             response = AdviserSerializer(adviser)
         token = Token.objects.create(user_id=user.id)
-        response.data['token'] = token.key
         return ApiResponse(
             success=True,
             message='Logged in',
-            data=response.data,
+            data={
+                'data': response.data,
+                'token': token.key
+            },
             status=status.HTTP_200_OK
         )
