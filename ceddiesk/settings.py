@@ -25,7 +25,7 @@ SECRET_KEY = '8(jxc_yuovnss-%+gbc!=(v+seujg(z9f+z*r_-j*4(&1x+rlu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ceddiesk.herokuapp.com']
 
 
 # TRUST HEROKU
