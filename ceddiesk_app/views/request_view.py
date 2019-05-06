@@ -3,12 +3,14 @@ from ceddiesk_app.apiresponse import ApiResponse
 from rest_framework import status
 from ceddiesk_app.models import Request, Teacher, Adviser
 from ceddiesk_app.serializers import RequestSerializer
+from rest_framework.authentication import TokenAuthentication
 
 
 class RequestView(APIView):
     """
     Handles all request related calls.
     """
+    authentication_classes = (TokenAuthentication,)
 
     def post(self, request, format=None):
         """
