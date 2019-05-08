@@ -50,9 +50,11 @@ class LoginView(APIView):
         login(request, user)
         try:
             teacher = Teacher.objects.get(user_id=user.id)
+            is_adviser = False
             response = TeacherSerializer(teacher)
         except Teacher.DoesNotExist:
             adviser = Adviser.objects.get(user_id=user.id)
+            is_adviser = True
             response = AdviserSerializer(adviser)
         token = Token.objects.create(user_id=user.id)
         return ApiResponse(
@@ -60,6 +62,7 @@ class LoginView(APIView):
             message='Logged in',
             data={
                 'data': response.data,
+                'is_adviser': is_adviser,
                 'token': token.key
             },
             status=status.HTTP_200_OK
