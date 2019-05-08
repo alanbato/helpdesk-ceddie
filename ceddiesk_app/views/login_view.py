@@ -56,7 +56,7 @@ class LoginView(APIView):
             adviser = Adviser.objects.get(user_id=user.id)
             is_adviser = True
             response = AdviserSerializer(adviser)
-        token = Token.objects.create(user_id=user.id)
+        token = Token.objects.get_or_create(user_id=user.id)
         return ApiResponse(
             success=True,
             message='Logged in',
