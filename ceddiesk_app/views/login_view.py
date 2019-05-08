@@ -6,6 +6,7 @@ from ceddiesk_app.models import Teacher, Adviser
 from ceddiesk_app.serializers import TeacherSerializer, AdviserSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import AllowAny
+from rest_framework.authtoken.models import Token
 
 
 class LoginView(APIView):
@@ -49,13 +50,20 @@ class LoginView(APIView):
         login(request, user)
         try:
             teacher = Teacher.objects.get(user_id=user.id)
+            is_adviser = False
             response = TeacherSerializer(teacher)
         except Teacher.DoesNotExist:
             adviser = Adviser.objects.get(user_id=user.id)
+            is_adviser = True
             response = AdviserSerializer(adviser)
+        token, created = Token.objects.get_or_create(user_id=user.id)
         return ApiResponse(
             success=True,
             message='Logged in',
-            data=response.data,
+            data={
+                'data': response.data,
+                'is_adviser': is_adviser,
+                'token': token.key
+            },
             status=status.HTTP_200_OK
         )

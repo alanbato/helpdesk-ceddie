@@ -6,6 +6,7 @@ from ceddiesk_app.models import Teacher
 from rest_framework.permissions import AllowAny
 from django.views.decorators.csrf import csrf_exempt
 from ceddiesk_app.serializers import TeacherSerializer
+from rest_framework.authtoken.models import Token
 
 
 class UserView(APIView):
@@ -51,6 +52,7 @@ class UserView(APIView):
             )
         user = User.objects.create_user(request.data['nomina'], request.data['email'], request.data['password'])
         if user:
+            token = Token.objects.create(user_id=user.id)
             teacher = Teacher.objects.create(
                 name=request.data['name'],
                 email=request.data['email'],
@@ -59,10 +61,14 @@ class UserView(APIView):
             )
             if teacher:
                 response = TeacherSerializer(teacher)
+                response.data['token'] = token.key
                 return ApiResponse(
                     success=True,
                     message='Teacher created successfully',
-                    data=response.data,
+                    data={
+                        'data': request.data,
+                        'token': token.key
+                    },
                     status=status.HTTP_201_CREATED
                 )
         return ApiResponse(

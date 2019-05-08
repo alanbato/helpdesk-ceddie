@@ -61,8 +61,11 @@ class TeacherSerializer(serializers.ModelSerializer):
 
 
 class RequestSerializer(serializers.ModelSerializer):
+    teacher = TeacherSerializer()
+
     class Meta:
         model = Request
+        depth = 1
         fields = '__all__'
 
 
