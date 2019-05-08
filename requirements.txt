@@ -1,0 +1,7 @@
+django-filter==2.1.0
+djangorestframework==3.9.2
+Django==2.2
+django-cors-headers
+gunicorn
+django-heroku
+whitenoise
